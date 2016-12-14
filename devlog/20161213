@@ -1,0 +1,11 @@
+To reinit a repository, just delete .git folder and it's all free.
+git commit -m takes DOUBLE quotes, not single quotes
+express routing doesn't read controller/action names, it just recognizes with the url passed in to route() function and the HTTP methods
+exec must be called to execute the query
+
+find() parameter is really annoying to compose
+  Quest.find({
+    $and: [
+      { $or: [{startDate: {$exists: false}}, {startDate: {$lt: new Date()}}] },
+      { $or: [{endDate: {$exists: false}}, {endDate: {$gt: new Date()}}] }
+    ]}).exec((err, quests)
