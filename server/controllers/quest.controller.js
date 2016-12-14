@@ -64,14 +64,16 @@ export function markQuestAttendance(req, res) {
     }
 
     var todayString = new Date().toLocaleDateString();
-    if (quest != null && !quest.attendance) {
-      quest.attendance = [];
-      quest.attendance.push(todayString);
-    }
-    else if(!quest.attendance.includes(todayString))
+    if(!quest.attendance.includes(todayString)){
       quest.attendance.push(todayString);
 
-    res.json({ quest: true });
+      quest.save((err, saved) => {
+        if (err) {
+          res.status(500).send(err);
+        }
+        res.json({ quest: saved });
+      });
+    }
   });
 }
 

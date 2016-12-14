@@ -7,7 +7,7 @@ const questSchema = new Schema({
   cuid: { type: 'String', required: true },
   startDate: { type: 'Date' },
   endDate: { type: 'Date' },
-  attendance: { type: 'Array' }
+  attendance: [String]
 });
 
 export default mongoose.model('Quest', questSchema);
