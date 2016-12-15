@@ -39,7 +39,7 @@ export function addQuest(req, res) {
   // Let's sanitize inputs
   newQuest.name = sanitizeHtml(newQuest.name);
 
-  newQuest.slug = slug(newQuest.title.toLowerCase(), { lowercase: true });
+  newQuest.slug = slug(newQuest.name.toLowerCase(), { lowercase: true });
   newQuest.cuid = cuid();
   newQuest.save((err, saved) => {
     if (err) {
