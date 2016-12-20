@@ -1,3 +1,13 @@
+#20161214
+
+what's this connect library? passing in all the state in one object?
+at which step should data manipulation happen? database raw data is not supposed to be used directly, as there's always real time calculation
+does combined reducer low efficiency? traversing all the reducers (case uniqueness?)
+components are enclosed into one div in render()
+still something weird about front end route
+
+#20161213
+
 To reinit a repository, just delete .git folder and it's all free.
 git commit -m takes DOUBLE quotes, not single quotes
 express routing doesn't read controller/action names, it just recognizes with the url passed in to route() function and the HTTP methods
