@@ -16,18 +16,24 @@ class QuestListPage extends Component {
     this.props.dispatch(getTodayQuestsRequest());
   }
 
-  handleTakeAttendance = post => {
-    this.props.dispatch(markQuestAttendanceRequest(post));
+  handleTakeAttendance = cuid => {
+    this.props.dispatch(markQuestAttendanceRequest(cuid));
   };
 
   handleAddQuest = (name) => {
     this.props.dispatch(addQuestRequest({ name }));
   };
 
+  handleArchive = (cuid) => {
+    this.props.dispatch(deleteQuestRequest({ cuid }));
+  };
   render() {
     return (
       <div>
-        <QuestList handleTakeAttendance={this.handleTakeAttendance} quests={this.props.quests} />
+        <QuestList
+          handleTakeAttendance={this.handleTakeAttendance}
+          handleArchive={this.handleArchive}
+          quests={this.props.quests} />
         <QuestCreate addQuest={this.handleAddQuest} />
       </div>
     );
@@ -35,7 +41,7 @@ class QuestListPage extends Component {
 }
 
 // Actions required to provide data for this component to render in sever side.
-QuestListPage.need = [() => { return getTodayQuests(); }];
+QuestListPage.need = [() => { return getTodayQuestsRequest(); }];
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
@@ -47,7 +53,6 @@ function mapStateToProps(state) {
 QuestListPage.propTypes = {
   quests: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
-    done: PropTypes.string.isRequired,
   })).isRequired,
   dispatch: PropTypes.func.isRequired,
 };

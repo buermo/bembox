@@ -7,15 +7,12 @@ const QuestReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_QUEST :
       return {
-        data: [action.post, ...state.data],
+        data: [action.quest, ...state.data],
       };
 
     case TODAY_QUESTS :
       var quests = action.quests;
-      var todayString = new Date().toLocaleDateString();
-      quests.forEach(function(v) {
-        v.done = v.attendance.includes(todayString);
-      });
+      
       return {
         data: quests,
       };
@@ -23,8 +20,9 @@ const QuestReducer = (state = initialState, action) => {
     case MARK_ATTENDANCE :
       var quest = state.data.filter(q => q.cuid == action.cuid);
       var todayString = new Date().toLocaleDateString();
-      if(!quest.attendance.includes(todayString)){
-        quest.attendance.push(todayString);
+      if(quest.length > 0 && !quest[0].attendance.includes(todayString)){
+        quest[0].attendance.push(todayString);
+        quest[0].done = true;
       }
       return {
         data: state.data,
@@ -42,7 +40,7 @@ const QuestReducer = (state = initialState, action) => {
 
 /* Selectors */
 
-// Get all posts
+// Get today quests from store
 export const getTodayQuests = all => all.quests.data;
 
 // Export Reducer

@@ -7,10 +7,10 @@ export const MARK_ATTENDANCE = 'MARK_ATTENDANCE';
 export const DELETE_QUEST = 'DELETE_QUEST';
 
 // Export Actions
-export function addQuest(post) {
+export function addQuest(quest) {
   return {
     type: ADD_QUEST,
-    post,
+    quest,
   };
 }
 
