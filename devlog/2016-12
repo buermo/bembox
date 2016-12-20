@@ -1,3 +1,10 @@
+#20161219
+
+learned connect() links store and react component
+better understanding of state and props - state handles the computation that happens front end
+css still a pain. installed font awesome but i'm thinking import FontAwesome as a whole on every page is probably too inefficient
+*content is not defined* error: css file is empty
+
 #20161214
 
 what's this connect library? passing in all the state in one object?
