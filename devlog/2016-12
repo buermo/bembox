@@ -1,3 +1,12 @@
+#20161220
+
+import css writes directly into html which is bad
+i ended up just link stylesheet from server.js
+glyphicon is a huge pain. resolving fonts is a huge pain.
+still learning webpack
+
+Note: glyphicons are currently not implemented, this is a bit tricky to do with css modules. An idea could be to use svg loader to load the fonts, any help on this appreciated, however currently these should be loaded as a seperate glyphicon.css module, most likely global, pointing to your font paths.
+
 #20161219
 
 learned connect() links store and react component
