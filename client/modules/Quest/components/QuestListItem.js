@@ -18,13 +18,13 @@ export class QuestListItem extends Component {
   };
   render() {
     return (
-      <li className={styles['single-post']}>
-          <input type="checkbox" checked={this.state.done} disabled={this.state.done} onChange={this.checkDone.bind(this)} />
+      <div className = "list-group-item row form-group">
+          <input className="toggle col-sm-2" type="checkbox" checked={this.state.done} disabled={this.state.done} onChange={this.checkDone.bind(this)} />
           <Link to={`/quests/${this.props.quest.slug}-${this.props.quest.cuid}`} >
             {this.props.quest.name}
           </Link>
-          <Glyphicon glyph='remove' onClick={this.props.onArchive} />
-      </li>
+          <Glyphicon glyph='remove' className="remove col-sm-2" onClick={this.props.onArchive} />
+      </div>
     );
   }
 }

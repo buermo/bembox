@@ -30,6 +30,10 @@ module.exports = {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$/i,
         loader: 'url-loader?limit=10000',
       },
+      // // Used for Bootstrap Less Source Files
+      // { test: /\.less/, loader: 'style!css!less' },
+      // // Used for Bootstrap Glyphicon Fonts
+      // { test: /\.(woff2|woff|ttf|svg|eot)$/, loader: 'file' }
     ],
   },
   postcss: () => [

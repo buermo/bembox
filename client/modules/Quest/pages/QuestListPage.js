@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import QuestList from '../components/QuestList';
 import QuestCreate from '../components/QuestCreate';
 
+// import HeaderNavigation from './HeaderNavigation';
+
 // Import Actions
 import { addQuestRequest, getTodayQuestsRequest, markQuestAttendanceRequest, deleteQuestRequest } from '../QuestActions';
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 // Import Style
 import styles from './App.css';
+//import 'bootstrap/less/bootstrap.less';
 
 // Import Components
 import Helmet from 'react-helmet';

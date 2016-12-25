@@ -5,7 +5,7 @@ import QuestListItem from './QuestListItem';
 
 function QuestList(props) {
   return (
-    <ul className="listView">
+    <div className="list-group container">
       {
         props.quests.map(quest => (
           <QuestListItem
@@ -16,7 +16,7 @@ function QuestList(props) {
           />
         ))
       }
-    </ul>
+    </div>
   );
 }
 

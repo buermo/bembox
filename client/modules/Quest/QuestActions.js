@@ -59,8 +59,8 @@ export function deleteQuest(cuid) {
   };
 }
 
-export function deleteQuestRequest(cuid) {
+export function deleteQuestRequest(quest) {
   return (dispatch) => {
-    return callApi(`quests/${cuid}`, 'delete').then(() => dispatch(deleteQuest(cuid)));
+    return callApi(`quests/${quest.cuid}`, 'delete').then(() => dispatch(deleteQuest(quest.cuid)));
   };
 }

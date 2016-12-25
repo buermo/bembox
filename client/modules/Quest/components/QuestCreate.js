@@ -15,10 +15,10 @@ export class QuestCreate extends Component {
 
   render() {
     return (
-      <div>
-        <div className={styles['form-content']}>
-          <input placeholder={this.props.intl.messages.authorName} className={styles['form-field']} ref="name" />
-          <a className={styles['quest-submit-button']} href="#" onClick={this.addQuest}><FormattedMessage id="submit" /></a>
+      <div className="list-group container">
+        <div className="list-group-item row form-inline">
+          <input placeholder={this.props.intl.messages.authorName} className="form-control" ref="name" />
+          <button type="submit" className="btn btn-primary" onClick={this.addQuest}>Add</button>
         </div>
       </div>
     );

@@ -1,3 +1,7 @@
+#20161225
+
+CSS in react is more complicated than expected: there's no good way to figure it out yet actually
+
 #20161220
 
 import css writes directly into html which is bad
