@@ -34,7 +34,9 @@ import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
 import quests from './routes/quest.routes';
+import learnja from './routes/learnja.routes';
 import dummyData from './dummyData';
+import wordInit from './wordInit';
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -49,6 +51,7 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
 
   // feed some dummy data in DB.
   dummyData();
+  wordInit();
 });
 
 // Apply body Parser and server public assets and routes
@@ -58,6 +61,7 @@ app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist')));
 app.use('/api', posts);
 app.use('/api', quests);
+app.use('/api', learnja);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
